@@ -27,11 +27,11 @@ class ContactItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
         }
 
         editBtn.setOnClickListener {
-            listener.onEditClick(editBtn, position)
+            listener.onEditClick(item, position)
         }
 
         deleteBtn.setOnClickListener {
-            listener.onDeleteClick(deleteBtn, position)
+            listener.onDeleteClick(item, position)
         }
     }
 }

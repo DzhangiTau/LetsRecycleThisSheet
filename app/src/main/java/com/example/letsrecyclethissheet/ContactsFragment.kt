@@ -21,6 +21,8 @@ import com.example.letsrecyclethissheet.model.ContactModel
 class ContactsFragment : Fragment() {
     private lateinit var viewModel: ContactsViewModel
     private lateinit var binding: FragmentContactsBinding
+    private lateinit var dbHelper: DataBaseHelper
+    private lateinit var contactAdapter: ContactAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +30,8 @@ class ContactsFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_contacts, container, false)
         viewModel = ViewModelProvider(this)[ContactsViewModel::class.java]
+        dbHelper = DataBaseHelper(requireContext())
+        contactAdapter = ContactAdapter()
 
         return binding.root
     }
@@ -40,36 +44,31 @@ class ContactsFragment : Fragment() {
             }
         }
 
-        val adapter = ContactAdapter(
-            listOf(
-                ContactModel(1, "John", "234234"),
-                ContactModel(2, "John", "234234"),
-                ContactModel(3, "John", "234234"),
-                ContactModel(4, "John", "234234"),
-                ContactModel(5, "John", "234234"),
-                ContactModel(6, "John", "234234"),
-            )
-        )
-        adapter.setOnClickListener(object : OnContactItemClickListener {
+        contactAdapter.setOnClickListener(object : OnContactItemClickListener {
             override fun onContactClick(itemView: TextView, position: Int) {
                 Toast.makeText(requireContext(), "${itemView.text}", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onEditClick(itemView: ImageView, position: Int) {
+            override fun onEditClick(contact: ContactModel, position: Int) {
                 Toast.makeText(requireContext(), "Edit", Toast.LENGTH_SHORT).show()
-
             }
 
-            override fun onDeleteClick(itemView: ImageView, position: Int) {
-                Toast.makeText(requireContext(), "Delete", Toast.LENGTH_SHORT).show()
+            override fun onDeleteClick(contact: ContactModel, position: Int) {
+                dbHelper.deleteContact(contact)
+                contactAdapter.updateContacts(dbHelper.getContacts())
             }
 
         })
         binding.contactsRv.apply {
-            this.adapter = adapter
+            this.adapter = contactAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
 
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onResume() {
+        contactAdapter.updateContacts(dbHelper.getContacts())
+        super.onResume()
     }
 }
