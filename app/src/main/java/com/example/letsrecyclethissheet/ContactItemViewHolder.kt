@@ -1,6 +1,5 @@
 package com.example.letsrecyclethissheet
 
-import android.icu.text.Transliterator
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -20,7 +19,7 @@ class ContactItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
         listener: OnContactItemClickListener,
         position: Int,
     ) {
-        phone.text = item.phoneNumber
+        phone.text = item.phone
         name.text = item.name
 
         contactItem.setOnClickListener {

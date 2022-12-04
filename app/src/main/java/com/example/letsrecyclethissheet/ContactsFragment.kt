@@ -42,12 +42,12 @@ class ContactsFragment : Fragment() {
 
         val adapter = ContactAdapter(
             listOf(
-                ContactModel("John", "234234"),
-                ContactModel("John", "234234"),
-                ContactModel("John", "234234"),
-                ContactModel("John", "234234"),
-                ContactModel("John", "234234"),
-                ContactModel("John", "234234"),
+                ContactModel(1, "John", "234234"),
+                ContactModel(2, "John", "234234"),
+                ContactModel(3, "John", "234234"),
+                ContactModel(4, "John", "234234"),
+                ContactModel(5, "John", "234234"),
+                ContactModel(6, "John", "234234"),
             )
         )
         adapter.setOnClickListener(object : OnContactItemClickListener {
