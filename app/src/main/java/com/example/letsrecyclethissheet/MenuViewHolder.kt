@@ -5,7 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MenuItemViewHolder(itemView: View) :
+class MenuViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     private val title: TextView = itemView.findViewById(R.id.title_tv)
     private val button: Button = itemView.findViewById(R.id.btn)

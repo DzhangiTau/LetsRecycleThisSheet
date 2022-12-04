@@ -7,17 +7,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MenuItemAdapter(private val items: List<Pair<String, String>>) :
-    RecyclerView.Adapter<MenuItemViewHolder>() {
+    RecyclerView.Adapter<MenuViewHolder>() {
     private lateinit var listener: OnItemClickListener
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val itemView = inflater.inflate(R.layout.menu_item, parent, false)
-        return MenuItemViewHolder(itemView)
+        return MenuViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MenuItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item, listener, position)
     }

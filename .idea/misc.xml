@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/drawable/horizontal_line.xml" value="0.174" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/drawable/ic_baseline_add.xml" value="0.174" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/drawable/ic_baseline_contacts.xml" value="0.101" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/drawable/ic_baseline_edit.xml" value="0.174" />
         <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/contact_item.xml" value="0.4" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/fragment_add_contact.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/fragment_contacts.xml" value="0.264" />
         <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/fragment_menu.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/menu_item.xml" value="0.2" />
         <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/layout/menu_item_row.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/79185/StudioProjects/LetsRecycleThisSheet/app/src/main/res/menu/main_menu.xml" value="0.13240740740740742" />
       </map>
     </option>
   </component>

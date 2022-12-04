@@ -2,6 +2,8 @@ package com.example.letsrecyclethissheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -9,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.letsrecyclethissheet.databinding.FragmentMenuBinding
 
@@ -20,6 +23,7 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -43,7 +47,14 @@ class MenuFragment : Fragment() {
         }
     }
 
-    private fun initAdapter() {
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.title) {
+            "Contacts" -> {
+                // Navigate to contacts
+                val action = MenuFragmentDirections.actionMenuFragmentToContactsFragment()
+                findNavController().navigate(action)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
